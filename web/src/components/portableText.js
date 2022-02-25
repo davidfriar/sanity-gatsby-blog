@@ -6,11 +6,12 @@ import { Figure } from "./Figure";
 const components = {
   types: {
     /* eslint-disable-next-line react/display-name */
-    authorReference: ({ node }) => <span>{node.author.name}</span>,
+    authorReference: (node) => {
+      return node ? <span>{node.value.author.name}</span> : null;
+    },
     mainImage: Figure,
   },
 };
-
 
 const PortableText = ({ blocks }) => (
   <BasePortableText
